@@ -11,6 +11,9 @@
 		<!-- Incluir essa permissao se for cachear imagens no cartao SD -->
 		<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
+	    <!-- Nao deixa android dormir -->
+	    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
 		
 
 	<application

@@ -9,8 +9,10 @@ import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import info.fabiodev.app.p2.R.id;
 import info.fabiodev.app.p2.R.layout;
 import org.androidannotations.api.builder.ActivityIntentBuilder;
@@ -66,7 +68,23 @@ public final class MainActivity_
 
     @Override
     public void onViewChanged(HasViews hasViews) {
+        progressBar2 = ((ProgressBar) hasViews.findViewById(id.progressBar2));
         imageView_principal = ((ImageView) hasViews.findViewById(id.imageView_principal));
+        {
+            View view = hasViews.findViewById(id.obter_dados);
+            if (view!= null) {
+                view.setOnClickListener(new OnClickListener() {
+
+
+                    @Override
+                    public void onClick(View view) {
+                        MainActivity_.this.obter_dados();
+                    }
+
+                }
+                );
+            }
+        }
         afterViews();
     }
 

@@ -1,17 +1,24 @@
-<AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:tools="http://schemas.android.com/tools"
 	android:layout_width="wrap_content"
 	android:layout_height="fill_parent" >
 
 
 	<ImageView
-			android:layout_width="197dp"
-			android:layout_height="553dp"
+			android:layout_width="fill_parent"
+			android:layout_height="match_parent"
 			android:id="@+id/imageView_principal" android:layout_alignParentLeft="true"
-			android:adjustViewBounds="false"/>
+			android:adjustViewBounds="false" android:contentDescription="@string/imagem"
+			android:layout_below="@+id/obter_dados" android:layout_above="@+id/progressBar2"/>
 	<Button
-			android:layout_width="302dp"
+			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
-			android:text="New Button"
-			android:id="@+id/button" android:layout_x="37dp" android:layout_y="-1dp"/>
-</AbsoluteLayout>
+			android:text="@string/botao_obter_dados"
+			android:id="@+id/obter_dados"
+			android:layout_alignParentLeft="true" android:layout_alignParentTop="true"/>
+	<ProgressBar
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:id="@+id/progressBar2"
+			android:layout_alignParentBottom="true" android:layout_alignParentLeft="true"/>
+</RelativeLayout>

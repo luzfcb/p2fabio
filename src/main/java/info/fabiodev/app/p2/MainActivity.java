@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 /**
@@ -20,6 +21,7 @@ import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
  * https://github.com/excilys/androidannotations/wiki/HowItWorks
  */
 import org.androidannotations.annotations.AfterViews;
+import org.androidannotations.annotations.Click;
 import org.androidannotations.annotations.EActivity;
 import org.androidannotations.annotations.ViewById;
 
@@ -34,6 +36,9 @@ public class MainActivity
 
     @ViewById
     protected ImageView imageView_principal;
+
+    @ViewById
+    protected ProgressBar progressBar2;
 
 
     @Override
@@ -62,16 +67,18 @@ public class MainActivity
 
     @AfterViews
     void afterViews() {
-        RestClient restclient = new RestClient(this, this.imageLoader, this.imageView_principal);
-        restclient.execute();
-
-
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater();
         return true;
+    }
+
+    @Click(R.id.obter_dados)
+    protected void obter_dados(){
+        RestClient restclient = new RestClient(this, this.imageLoader, this.imageView_principal, this.progressBar2);
+        restclient.execute();
     }
 
 }

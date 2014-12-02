@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.os.AsyncTask;
 import android.util.Log;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 /**
@@ -24,8 +25,9 @@ import java.util.ArrayList;
  */
 
 public class RestClient extends AsyncTask<String, Integer, String> {
-    private ImageView imageView;
-    private ImageLoader imageLoader;
+    private final ProgressBar progressBar;
+    private final ImageView imageView;
+    private final ImageLoader imageLoader;
 
     public ArrayList<JSONObject> getPizzas_jsonObjectArrayList() {
         return pizzas_jsonObjectArrayList;
@@ -38,10 +40,13 @@ public class RestClient extends AsyncTask<String, Integer, String> {
 
     @Override
     protected void onPreExecute() {
+        super.onPreExecute();
+        //this.progressBar.Show
 
     }
 
-    public RestClient(Activity activity, ImageLoader imageLoader, ImageView imageView) {
+    public RestClient(Activity activity, ImageLoader imageLoader, ImageView imageView, ProgressBar progressBar) {
+        this.progressBar = progressBar;
         this.imageLoader = imageLoader;
         this.imageView = imageView;
         this.activity = activity;

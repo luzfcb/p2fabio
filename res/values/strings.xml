@@ -3,5 +3,7 @@
 	<string name="app_name">P2Fabio</string>
 	<string name="hello_world">Hello world!</string>
 	<string name="menu_settings">Settings</string>
+	<string name="imagem">imagem</string>
+	<string name="botao_obter_dados">Obter dados</string>
 
 </resources>
