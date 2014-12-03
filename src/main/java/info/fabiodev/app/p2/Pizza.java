@@ -6,7 +6,7 @@ import org.json.JSONObject;
 /**
  * Created by luzfcb on 25/11/14.
  */
-class Pizza{
+public class Pizza{
     public String getNome() {
         return nome;
     }

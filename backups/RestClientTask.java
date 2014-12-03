@@ -10,7 +10,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 
 /**
- * Created by sutransdev on 02/12/14.
+ * Created by oficina on 02/12/14.
  */
 public class RestClientTask extends GroundyTask {
     private Webb webb;

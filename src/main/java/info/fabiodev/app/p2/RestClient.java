@@ -3,6 +3,7 @@ package info.fabiodev.app.p2;
 import android.app.Activity;
 import android.os.AsyncTask;
 import android.util.Log;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
@@ -42,6 +43,7 @@ public class RestClient extends AsyncTask<String, Integer, String> {
     protected void onPreExecute() {
         super.onPreExecute();
         //this.progressBar.Show
+        this.progressBar.setVisibility(View.VISIBLE);
 
     }
 
@@ -104,5 +106,6 @@ public class RestClient extends AsyncTask<String, Integer, String> {
         Toast.makeText(this.activity, "asdad", 5).show();
         Log.v("teste", "asdad");
         imageLoader.displayImage(pizza.getFoto(), imageView);
+        this.progressBar.setVisibility(View.INVISIBLE);
     }
 }

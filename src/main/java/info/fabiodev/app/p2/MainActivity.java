@@ -3,7 +3,9 @@ package info.fabiodev.app.p2;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -20,10 +22,15 @@ import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
  * excilys Android Annotations
  * https://github.com/excilys/androidannotations/wiki/HowItWorks
  */
-import org.androidannotations.annotations.AfterViews;
-import org.androidannotations.annotations.Click;
-import org.androidannotations.annotations.EActivity;
-import org.androidannotations.annotations.ViewById;
+import org.androidannotations.annotations.*;
+import org.androidannotations.annotations.rest.Get;
+import org.androidannotations.annotations.rest.Rest;
+import org.androidannotations.annotations.rest.RestService;
+import org.springframework.http.converter.json.MappingJacksonHttpMessageConverter;
+
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by luzfcb on 25/11/14.
@@ -67,6 +74,7 @@ public class MainActivity
 
     @AfterViews
     void afterViews() {
+        this.progressBar2.setVisibility(View.INVISIBLE);
     }
 
     @Override
@@ -79,6 +87,10 @@ public class MainActivity
     protected void obter_dados(){
         RestClient restclient = new RestClient(this, this.imageLoader, this.imageView_principal, this.progressBar2);
         restclient.execute();
+
     }
+
+
+
 
 }
